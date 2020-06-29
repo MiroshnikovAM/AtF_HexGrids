@@ -37,7 +37,21 @@ function draw_hex(center, size) {
     ctx.stroke();
 }
 
-function draw_row(center_start, )
+function draw_row(center_start, size, row_lenght) {
+    var center = {
+        x : center_start.x,
+        y : center_start.y
+    }
+    var i;
+    for (i = 0; i < row_lenght; i++) {
+        draw_hex(center, size);
+        center.x += size * Math.sqrt(3);
+    }
+}
+
+function draw_grid(center_start, size, row_quantity) {
+    
+}
 
 function main() {
     // alert('main');
@@ -46,5 +60,6 @@ function main() {
         y : 100
     }
     var size = 30;
-    draw_hex(center, size);
+    var row_lenght = 5;
+    draw_row(center, size, row_lenght);
 }

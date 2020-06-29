@@ -25,8 +25,8 @@ function pointy_hex_corner(center, size, i) {
     var angle_deg = 60 * i - 30;
     var angle_rad = Math.PI / 180 * angle_deg;
     var Point = {
-        x : center.x + size * cos(angle_rad),
-        y : center.y + size * sin(angle_rad)
+        x : center.x + size * Math.cos(angle_rad),
+        y : center.y + size * Math.sin(angle_rad)
     };
     return Point;
 }
@@ -55,6 +55,7 @@ function draw_hex(center, size) {
 }
 
 function main() {
+    // alert('main');
     var center = {
         x : 100,
         y : 100

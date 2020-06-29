@@ -1,5 +1,3 @@
-<script>
-
 function myFunction() {
   var x = document.getElementById("demo");
   x.style.fontSize = "25px"; 
@@ -50,5 +48,3 @@ function main() {
     var size = 30;
     draw_hex(center, size);
 }
-
-</script>

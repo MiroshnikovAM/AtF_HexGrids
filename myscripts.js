@@ -49,8 +49,22 @@ function draw_row(center_start, size, row_lenght) {
     }
 }
 
-function draw_grid(center_start, size, row_quantity) {
-    
+function draw_grid(center_start, size, row_length, row_quantity) {
+    var center = {
+        x : center_start.x,
+        y : center_start.y
+    }
+    var hex_width = Math.sqrt(3) * size;
+    var hex_height = 2 * size;
+    for (i = 0; i < row_quantity; i++) {
+        draw_row(center, size, row_length);
+        center.y += (hex_height * 3/4);
+        if (!(i & 1)) {
+            center.x += (hex_width / 2);
+        } else {
+            center.x = center_start.x;
+        }
+    }    
 }
 
 function main() {
@@ -61,5 +75,6 @@ function main() {
     }
     var size = 30;
     var row_lenght = 5;
-    draw_row(center, size, row_lenght);
+    var row_quantity = 5;
+    draw_grid(center, size, row_lenght, row_quantity);
 }
